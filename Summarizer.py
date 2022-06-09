@@ -9,7 +9,7 @@ import requests
 
 st.markdown(""" 
 <style>
-.css-1go4be1.edgvbvh3
+.css-1ht7nmy.edgvbvh3
 {
 visibility:hidden;
 disabled:true;
