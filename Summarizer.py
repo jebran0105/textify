@@ -9,7 +9,7 @@ import requests
 
 st.markdown(""" 
 <style>
-.viewerBadge_link__1S137
+.css-19wwds0.egzxvld0
 {
 visibility:hidden;
 }
