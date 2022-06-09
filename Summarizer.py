@@ -14,10 +14,6 @@ st.markdown("""
 visibility:hidden;
 disabled:true;
 }
-.css-z9ix4r.egzxvld0
-{
-visibility:hidden;
-}
 </style>
 """, unsafe_allow_html=True)
 
