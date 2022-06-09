@@ -443,7 +443,7 @@ else:
         uploaded_file = st.file_uploader('Upload your file below')
         if not uploaded_file:
             st.stop()
-        page_number = st.number_input('Enter the page number you would like a summary from')
+        page_number = st.number_input('Enter the page number you would like a summary from', min_value=0, step=1)
         pdf = pdfplumber.open(uploaded_file)
         page = pdf.pages[page_number]
         ARTICLE = page.extract_text()
