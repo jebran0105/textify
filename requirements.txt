@@ -3,3 +3,4 @@ pandas
 youtube_dl
 requests
 pdfplumber
+transformers
