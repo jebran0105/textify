@@ -277,7 +277,11 @@ if mode == 'Media - Audio, Video & YouTube':
 
         status = 'submitted'
         while status != 'completed':
-            polling_response = requests.get(st.session_state['polling_endpoint'], headers)
+            try:
+                polling_response = requests.get(st.session_state['polling_endpoint'], headers)
+            except KeyError:
+                st.stop()
+
             status = polling_response.json()['status']
 
             if status == 'completed':
@@ -341,6 +345,10 @@ if mode == 'Media - Audio, Video & YouTube':
                             n_buttons += 1
 
 else:
+
+    st.sidebar.subheader('👇 Step 3: View Summary')
+    st.sidebar.markdown(':page_with_curl:&nbsp;&nbsp;&nbsp;View a summarized version of your file or text within the '
+                        'word limits you have set.')
 
     file_type = st.radio(
         "Select your source",
@@ -440,10 +448,13 @@ else:
 
     if file_type == 'Upload Text File':
 
+        minimum_words = st.number_input('Enter the minimum number of words for your summary', min_value=30, step=5)
+        maximum_words = st.number_input('Enter the maximum number of words for your summary', min_value=120, step=5)
+        page_number = st.number_input('Enter the page number you would like a summary from', min_value=0, step=1)
+
         uploaded_file = st.file_uploader('Upload your file below')
         if not uploaded_file:
             st.stop()
-        page_number = st.number_input('Enter the page number you would like a summary from', min_value=0, step=1)
         pdf = pdfplumber.open(uploaded_file)
         page = pdf.pages[page_number]
         ARTICLE = page.extract_text()
