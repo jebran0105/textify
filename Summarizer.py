@@ -7,16 +7,6 @@ from transformers import pipeline
 from bs4 import BeautifulSoup
 import requests
 
-st.markdown(""" 
-<style>
-.css-1ht7nmy.edgvbvh3
-{
-visibility:hidden;
-disabled:true;
-}
-</style>
-""", unsafe_allow_html=True)
-
 st.title('Textvert - Insights that save time.')
 st.subheader('Where would you like to derive your insights from?')
 
