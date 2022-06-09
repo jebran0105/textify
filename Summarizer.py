@@ -17,22 +17,22 @@ disabled:true;
 </style>
 """, unsafe_allow_html=True)
 
-st.title('Textify - Derive insights from files')
+st.title('Textvert - Insights that save time.')
 st.subheader('Where would you like to derive your insights from?')
 
-st.sidebar.title("🧐 How can Textify help you?")
+st.sidebar.title("🧐 How can Textvert help?")
 st.sidebar.header('🥱 It\'s a 3-step process')
-st.sidebar.markdown("""<hr style="height:5px;border:none;color:#289672;background-color:#289672;" /> """,
+st.sidebar.markdown("""<hr style="height:2px;border:none;color:#945D60;background-color:#945D60;" /> """,
                     unsafe_allow_html=True)
 st.sidebar.subheader('👇 Step 1: Choose an insight source')
 mode = st.sidebar.selectbox("",
                             ('Media - Audio, Video & YouTube', 'Text - PDFs & Text Input'))
-st.sidebar.markdown("""<hr style="height:5px;border:none;color:#289672;background-color:#289672;" /> """,
+st.sidebar.markdown("""<hr style="height:2px;border:none;color:#945D60;background-color:#945D60;" /> """,
                     unsafe_allow_html=True)
 
 if mode == 'Media - Audio, Video & YouTube':
     st.sidebar.subheader('👇 Step 2: Upload content, hit Submit')
-    st.sidebar.markdown("""<hr style="height:5px;border:none;color:#289672;background-color:#289672;" /> """,
+    st.sidebar.markdown("""<hr style="height:2px;border:none;color:#945D60;background-color:#945D60;" /> """,
                         unsafe_allow_html=True)
     st.sidebar.subheader('👇 Step 3: Choose an insight')
     st.sidebar.markdown(":point_right:&nbsp;&nbsp;&nbsp;[**View Chapters & Summaries**](#chapters-and-summaries)",
