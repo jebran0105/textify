@@ -448,6 +448,7 @@ else:
         page = pdf.pages[page_number]
         ARTICLE = page.extract_text()
 
+        summarizer = pipeline("summarization")
         max_chunk = 500
         ARTICLE = ARTICLE.replace('.', '.<eos>')
         ARTICLE = ARTICLE.replace('?', '?<eos>')
