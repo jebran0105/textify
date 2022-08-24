@@ -4,7 +4,6 @@ import youtube_dl
 from get_results import *
 import pandas as pd
 from transformers import pipeline
-from bs4 import BeautifulSoup
 import requests
 
 st.markdown(""" 
