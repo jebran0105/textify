@@ -173,7 +173,7 @@ if mode == 'Media - Audio, Video & YouTube':
                 for index, row in chapters_df.iterrows():
                     with st.expander(row['gist']):
                         st.write(row['summary'])
-                        st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=1)
+                        st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=3)
                         st.markdown(
                             "[After clicking the timestamp, click here to view your media at the desired point]("
                             "#where-would-you-like-to-derive-your-insights-from)",
@@ -190,7 +190,7 @@ if mode == 'Media - Audio, Video & YouTube':
 
                 for index, row in paragraphs_df.iterrows():
                     st.write(row['text'])
-                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=2)
+                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=4)
                     st.markdown(
                         "[After clicking the timestamp, click here to view your media at the desired point]("
                         "#where-would-you-like-to-derive-your-insights-from)",
