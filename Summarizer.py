@@ -122,7 +122,7 @@ if mode == 'Media - Audio, Video & YouTube':
                         for t in timestamps:
                             start_ms = t['start']
                             ms_start = convertMillis(start_ms)
-                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=2)
+                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=n_buttons)
                             n_buttons += 1
 
     # Audio file
@@ -283,7 +283,7 @@ if mode == 'Media - Audio, Video & YouTube':
                         for t in timestamps:
                             start_ms = t['start']
                             ms_start = convertMillis(start_ms)
-                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=5)
+                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=n_buttons)
                             n_buttons += 1
 
 else:
