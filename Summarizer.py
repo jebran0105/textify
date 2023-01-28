@@ -88,24 +88,6 @@ if mode == 'Media - Audio, Video & YouTube':
 
             if status == 'completed':
 
-                st.subheader('Chapters and Summaries')
-                chapters = polling_response.json()['chapters']
-                chapters_df = pd.DataFrame(chapters)
-                chapters_df['start_str'] = chapters_df['start'].apply(convertMillis)
-                chapters_df['end_str'] = chapters_df['end'].apply(convertMillis)
-
-                for index, row in chapters_df.iterrows():
-                    with st.expander(row['gist']):
-                        st.write(row['summary'])
-                        st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=1)
-                        st.markdown(
-                            "[After clicking the timestamp, click here to view your media at the desired point]("
-                            "#where-would-you-like-to-derive-your-insights-from)",
-                            unsafe_allow_html=True)
-
-                st.markdown("""<hr style="height:5px;border:none;color:#333;background-color:#333;" /> """,
-                            unsafe_allow_html=True)
-
                 st.subheader('Transcribed Text')
                 paragraph_endpoint = st.session_state['polling_endpoint'] + "/paragraphs"
                 paragraph_response = requests.get(paragraph_endpoint, headers)
@@ -164,21 +146,6 @@ if mode == 'Media - Audio, Video & YouTube':
 
             if status == 'completed':
 
-                st.subheader('Chapters and Summaries')
-                chapters = polling_response.json()['chapters']
-                chapters_df = pd.DataFrame(chapters)
-                chapters_df['start_str'] = chapters_df['start'].apply(convertMillis)
-                chapters_df['end_str'] = chapters_df['end'].apply(convertMillis)
-
-                for index, row in chapters_df.iterrows():
-                    with st.expander(row['gist']):
-                        st.write(row['summary'])
-                        st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=3)
-                        st.markdown(
-                            "[After clicking the timestamp, click here to view your media at the desired point]("
-                            "#where-would-you-like-to-derive-your-insights-from)",
-                            unsafe_allow_html=True)
-
                 st.subheader('Transcribed Text')
                 paragraph_endpoint = st.session_state['polling_endpoint'] + "/paragraphs"
                 paragraph_response = requests.get(paragraph_endpoint, headers)
@@ -215,11 +182,6 @@ if mode == 'Media - Audio, Video & YouTube':
                             ms_start = convertMillis(start_ms)
                             st.button(ms_start, on_click=update_start, args=(start_ms,), key=n_buttons)
                             n_buttons += 1
-
-                            # command = 'ffmpeg -i {filename} -ab 160k -ar 44100 -vn {filename}.wav'.format(
-        # filename=uploaded_video_file.name)
-        # subprocess.call(command, shell=True)
-        # '{filename}.wav'.format(filename=uploaded_video_file.name)#
 
     # YouTube Link
     if file_type == 'YouTube':
@@ -283,24 +245,6 @@ if mode == 'Media - Audio, Video & YouTube':
             status = polling_response.json()['status']
 
             if status == 'completed':
-
-                st.subheader('Chapters and Summaries')
-                chapters = polling_response.json()['chapters']
-                chapters_df = pd.DataFrame(chapters)
-                chapters_df['start_str'] = chapters_df['start'].apply(convertMillis)
-                chapters_df['end_str'] = chapters_df['end'].apply(convertMillis)
-
-                for index, row in chapters_df.iterrows():
-                    with st.expander(row['gist']):
-                        st.write(row['summary'])
-                        st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=5)
-                        st.markdown(
-                            "[After clicking the timestamp, click here to view your media at the desired point]("
-                            "#where-would-you-like-to-derive-your-insights-from)",
-                            unsafe_allow_html=True)
-
-                st.markdown("""<hr style="height:5px;border:none;color:#333;background-color:#333;" /> """,
-                            unsafe_allow_html=True)
 
                 st.subheader('Transcribed Text')
                 paragraph_endpoint = st.session_state['polling_endpoint'] + "/paragraphs"
