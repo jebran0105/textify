@@ -98,8 +98,10 @@ if mode == 'Media - Audio, Video & YouTube':
                 paragraphs_df['end_str'] = paragraphs_df['end'].apply(convertMillis)
 
                 for index, row in paragraphs_df.iterrows():
+                    x_numbers = 0
                     st.write(row['text'])
-                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=1)
+                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=x_numbers)
+                    x_numbers += 1
                     st.markdown(
                         "[After clicking the timestamp, click here to view your media at the desired point]("
                         "#where-would-you-like-to-derive-your-insights-from)",
@@ -112,7 +114,7 @@ if mode == 'Media - Audio, Video & YouTube':
                     unsafe_allow_html=True)
                 word_highlights = polling_response.json()['auto_highlights_result']['results']
                 cols = st.columns(3)
-                n_buttons = 7
+                n_buttons = 10
                 for res_idx, res in enumerate(word_highlights):
                     text = res['text']
                     timestamps = res['timestamps']
@@ -156,8 +158,10 @@ if mode == 'Media - Audio, Video & YouTube':
                 paragraphs_df['end_str'] = paragraphs_df['end'].apply(convertMillis)
 
                 for index, row in paragraphs_df.iterrows():
+                    j_buttons = 20
                     st.write(row['text'])
-                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=3)
+                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=j_buttons)
+                    j_buttons += 1
                     st.markdown(
                         "[After clicking the timestamp, click here to view your media at the desired point]("
                         "#where-would-you-like-to-derive-your-insights-from)",
@@ -170,7 +174,7 @@ if mode == 'Media - Audio, Video & YouTube':
                     unsafe_allow_html=True)
                 word_highlights = polling_response.json()['auto_highlights_result']['results']
                 cols = st.columns(3)
-                n_buttons = 7
+                k_buttons = 30
                 for res_idx, res in enumerate(word_highlights):
                     text = res['text']
                     timestamps = res['timestamps']
@@ -180,8 +184,8 @@ if mode == 'Media - Audio, Video & YouTube':
                         for t in timestamps:
                             start_ms = t['start']
                             ms_start = convertMillis(start_ms)
-                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=n_buttons)
-                            n_buttons += 1
+                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=k_buttons)
+                            k_buttons += 1
 
     # YouTube Link
     if file_type == 'YouTube':
@@ -256,8 +260,10 @@ if mode == 'Media - Audio, Video & YouTube':
                 paragraphs_df['end_str'] = paragraphs_df['end'].apply(convertMillis)
 
                 for index, row in paragraphs_df.iterrows():
+                    l_buttons = 40
                     st.write(row['text'])
-                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=4)
+                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=l_buttons)
+                    l_buttons += 1
                     st.markdown(
                         "[After clicking the timestamp, click here to view your media at the desired point]("
                         "#where-would-you-like-to-derive-your-insights-from)",
@@ -273,7 +279,7 @@ if mode == 'Media - Audio, Video & YouTube':
                     unsafe_allow_html=True)
                 word_highlights = polling_response.json()['auto_highlights_result']['results']
                 cols = st.columns(5)
-                n_buttons = 7
+                m_buttons = 50
                 for res_idx, res in enumerate(word_highlights):
                     text = res['text']
                     timestamps = res['timestamps']
@@ -283,8 +289,8 @@ if mode == 'Media - Audio, Video & YouTube':
                         for t in timestamps:
                             start_ms = t['start']
                             ms_start = convertMillis(start_ms)
-                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=n_buttons)
-                            n_buttons += 1
+                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=m_buttons)
+                            m_buttons += 1
 
 else:
 
