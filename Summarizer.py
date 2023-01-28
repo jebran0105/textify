@@ -259,8 +259,8 @@ if mode == 'Media - Audio, Video & YouTube':
                 paragraphs_df['start_str'] = paragraphs_df['start'].apply(convertMillis)
                 paragraphs_df['end_str'] = paragraphs_df['end'].apply(convertMillis)
 
+                l_buttons = 40
                 for index, row in paragraphs_df.iterrows():
-                    l_buttons = 40
                     st.write(row['text'])
                     st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=l_buttons)
                     l_buttons += 1
