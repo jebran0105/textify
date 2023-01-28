@@ -99,7 +99,7 @@ if mode == 'Media - Audio, Video & YouTube':
 
                 for index, row in paragraphs_df.iterrows():
                     st.write(row['text'])
-                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=2)
+                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=1)
                     st.markdown(
                         "[After clicking the timestamp, click here to view your media at the desired point]("
                         "#where-would-you-like-to-derive-your-insights-from)",
@@ -122,7 +122,7 @@ if mode == 'Media - Audio, Video & YouTube':
                         for t in timestamps:
                             start_ms = t['start']
                             ms_start = convertMillis(start_ms)
-                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=n_buttons)
+                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=2)
                             n_buttons += 1
 
     # Audio file
@@ -157,7 +157,7 @@ if mode == 'Media - Audio, Video & YouTube':
 
                 for index, row in paragraphs_df.iterrows():
                     st.write(row['text'])
-                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=4)
+                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=3)
                     st.markdown(
                         "[After clicking the timestamp, click here to view your media at the desired point]("
                         "#where-would-you-like-to-derive-your-insights-from)",
@@ -257,7 +257,7 @@ if mode == 'Media - Audio, Video & YouTube':
 
                 for index, row in paragraphs_df.iterrows():
                     st.write(row['text'])
-                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=6)
+                    st.button(row['start_str'], on_click=update_start, args=(row['start'],), key=4)
                     st.markdown(
                         "[After clicking the timestamp, click here to view your media at the desired point]("
                         "#where-would-you-like-to-derive-your-insights-from)",
@@ -283,7 +283,7 @@ if mode == 'Media - Audio, Video & YouTube':
                         for t in timestamps:
                             start_ms = t['start']
                             ms_start = convertMillis(start_ms)
-                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=n_buttons)
+                            st.button(ms_start, on_click=update_start, args=(start_ms,), key=5)
                             n_buttons += 1
 
 else:
